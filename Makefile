@@ -10,7 +10,6 @@ ENVIRONMENT_NAME = $(PROJECT_NAME)
 PYTHON_INTERPRETER = python3
 PIP_INTERPRETER = pip
 PYTHON_VERSION = 3.9
-PIP_VERSION = 22.3
 
 # --- REQUIREMENTS-RELATED
 REQUIREMENTS_FILE = $(PROJECT_DIR)/requirements.txt
@@ -58,7 +57,6 @@ show-params:
 	@ echo "ENVIRONMENT_NAME:                  $(ENVIRONMENT_NAME)"
 	@ echo "PYTHON_INTERPRETER:                $(PYTHON_INTERPRETER)"
 	@ echo "PYTHON_VERSION:                    $(PYTHON_VERSION)"
-	@ echo "PIP_VERSION:                       $(PIP_VERSION)"
 	@ echo "REQUIREMENTS_FILE:                 $(REQUIREMENTS_FILE)"
 	@ echo "REQUIREMENTS_FILE_TEMP:            $(REQUIREMENTS_FILE_TEMP)"
 	@ echo "REQUIREMENTS_DEV_FILE:             $(REQUIREMENTS_DEV_FILE)"
@@ -182,7 +180,7 @@ endif
 
 ## Upgrade the version of the 'pip' package
 pip-upgrade:
-	@ $(PYTHON_INTERPRETER) -m pip install --no-cache-dir -q --upgrade pip==$(PIP_VERSION)
+	@ $(PYTHON_INTERPRETER) -m pip install --no-cache-dir -q --upgrade pip
 
 ## Sort the project packages requirements file
 sort-requirements:
